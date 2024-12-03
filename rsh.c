@@ -159,13 +159,8 @@ int main(int argc, char **argv) {
 			continue;
 		}
 
-		
-		struct message request;
-		strcopy(request.source, uName);
-		strcopy(request.target, target);
-		strcopy(request.msg, newMsg);
 
-		sendmsg(request.source, request.target, request.msg);
+		sendmsg(uName, target, newMsg);
 
 
 		continue;
