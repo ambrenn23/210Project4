@@ -37,7 +37,7 @@ void sendmsg (char *user, char *target, char *msg) {
 	srcopy(req.msg, msg);
 	
 
-	int server = open("serverFIFO", O_WRONLY)
+	int server = open("serverFIFO", O_WRONLY);
 	write(server, (void*)(&req), sizeof(struct message));
 
 
@@ -101,7 +101,7 @@ int main(int argc, char **argv) {
     // create the message listener thread
 
 	pthread_t threadID;
-	pthread_create(&threatID, NULL, messageListener, NULL);
+	pthread_create(&threadID, NULL, messageListener, NULL);
 	
 
 
@@ -150,12 +150,12 @@ int main(int argc, char **argv) {
 		char* newMsg = line2;
 		while(iteration > 0){
 			if(newMsg[0] == ' '){
-				count--;
+				iteration--;
 			}
 			newMsg++;
 		}
 		if(newMsg[0] == '\0'){
-			printf(sendmsg: you have to enter a message\n")
+			printf("sendmsg: you have to enter a message\n");
 			continue;
 		}
 
