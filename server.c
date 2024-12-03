@@ -31,10 +31,12 @@ int main() {
 	while (1) {
 		// TODO:
 		// read requests from serverFIFO
-
-
-
-
+		if(read(server, &req, sizeof(struct message)) > 0){
+			target = open(req.target, O_WRONLY);
+			write(target, (void*)(&req), sizeof(struct message));
+			close(target);
+		}
+		
 
 
 		printf("Received a request from %s to send the message %s to %s.\n",req.source,req.msg,req.target);
