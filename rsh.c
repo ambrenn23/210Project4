@@ -32,9 +32,9 @@ void sendmsg (char *user, char *target, char *msg) {
 	// by creating the message structure and writing it to server's FIFO
 
 	struct message req;
-	strcopy(req.source, user);
-	strcopy(req.target, target);
-	srcopy(req.msg, msg);
+	strcpy(req.source, user);
+	strcpy(req.target, target);
+	strcpy(req.msg, msg);
 	
 
 	int server = open("serverFIFO", O_WRONLY);
@@ -140,7 +140,7 @@ int main(int argc, char **argv) {
  		// printf("sendmsg: you have to enter a message\n");
 
 		char target[50];
-		strcopy(target, strtok(NULL, " "));
+		strcpy(target, strtok(NULL, " "));
 		if(target != "user1" || target != "user2"){
 			printf("sendmsg: you have to specify target user\n");
 			continue;
