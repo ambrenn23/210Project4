@@ -60,7 +60,7 @@ void* messageListener(void *arg) {
 	
 	while(1){
 		if(read(fifo1, &text, sizeof(struct message)) > 0){
-			printf("Incoming Message from %s: %s/n", text.source, text.msg);
+			printf("Incoming Message from %s: %s\n", text.source, text.msg);
 		}
 	}
 
