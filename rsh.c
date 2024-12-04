@@ -141,10 +141,10 @@ int main(int argc, char **argv) {
 
 		char target[50];
 		strcpy(target, strtok(NULL, " "));
-		if(target != "user1" || target != "user2"){
-			printf("sendmsg: you have to specify target user\n");
-			continue;
-		}
+		// if(target != "user1" || target != "user2"){
+		// 	printf("sendmsg: you have to specify target user\n");
+		// 	continue;
+		// }
 
 		int iteration = 2;
 		char* newMsg = line2;
